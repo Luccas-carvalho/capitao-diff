@@ -1,0 +1,14 @@
+qa:
+  baseUrl: http://localhost:3000
+  baseBranch: dev
+  projectPort: 3000
+  framework: react
+
+auth:
+  email: admin@test.com
+  password: admin
+
+twoFactor:
+  enabled: false
+  provider: mailhog
+  url: http://localhost:8025

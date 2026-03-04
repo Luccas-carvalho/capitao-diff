@@ -1,0 +1,20 @@
+{
+  "name": "@capitao-diff/qa-engine",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'No lint configured for @capitao-diff/qa-engine'",
+    "test": "echo 'No tests for @capitao-diff/qa-engine'",
+    "format": "echo 'Use your formatter of choice'"
+  },
+  "dependencies": {
+    "@capitao-diff/i18n": "workspace:*",
+    "@capitao-diff/playwright-runner": "workspace:*",
+    "@capitao-diff/shared": "workspace:*"
+  }
+}

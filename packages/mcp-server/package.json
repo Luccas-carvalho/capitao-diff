@@ -1,0 +1,28 @@
+{
+  "name": "@capitao-diff/mcp-server",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "capitao-diff-mcp": "dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'No lint configured for @capitao-diff/mcp-server'",
+    "test": "echo 'No tests for @capitao-diff/mcp-server'",
+    "format": "echo 'Use your formatter of choice'",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@capitao-diff/playwright-runner": "workspace:*",
+    "@capitao-diff/qa-engine": "workspace:*",
+    "@capitao-diff/shared": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.12.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3"
+  }
+}

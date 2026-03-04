@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  projects     Project[]
+}
+
+model Project {
+  id        String   @id @default(cuid())
+  name      String
+  repoUrl   String?
+  ownerId   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  runs      QaRun[]
+  issues    Issue[]
+}
+
+model QaRun {
+  id             String       @id @default(cuid())
+  projectId      String
+  status         String
+  score          Int
+  summary        String
+  language       String
+  resultMarkdown String
+  createdAt      DateTime     @default(now())
+  project        Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  screenshots    Screenshot[]
+  report         Report?
+}
+
+model Screenshot {
+  id        String   @id @default(cuid())
+  runId     String
+  path      String
+  viewport  String
+  createdAt DateTime @default(now())
+  run       QaRun    @relation(fields: [runId], references: [id], onDelete: Cascade)
+}
+
+model Report {
+  id        String   @id @default(cuid())
+  runId     String   @unique
+  payload   Json
+  createdAt DateTime @default(now())
+  run       QaRun    @relation(fields: [runId], references: [id], onDelete: Cascade)
+}
+
+model Issue {
+  id          String   @id @default(cuid())
+  projectId   String
+  title       String
+  severity    String
+  status      String   @default("open")
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}

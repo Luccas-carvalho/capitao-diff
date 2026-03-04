@@ -1,0 +1,15 @@
+{
+  "name": "@capitao-diff/shared",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'No lint configured for @capitao-diff/shared'",
+    "test": "echo 'No tests for @capitao-diff/shared'",
+    "format": "echo 'Use your formatter of choice'"
+  }
+}

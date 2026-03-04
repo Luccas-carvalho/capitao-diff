@@ -1,0 +1,33 @@
+{
+  "name": "@capitao-diff/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "captain-diff": "dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'No lint configured for @capitao-diff/cli'",
+    "test": "echo 'No tests for @capitao-diff/cli'",
+    "format": "echo 'Use your formatter of choice'",
+    "dev": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@capitao-diff/i18n": "workspace:*",
+    "@capitao-diff/qa-engine": "workspace:*",
+    "@capitao-diff/shared": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "commander": "^14.0.1",
+    "inquirer": "^12.4.2",
+    "js-yaml": "^4.1.0",
+    "octokit": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "tsx": "^4.19.3"
+  }
+}

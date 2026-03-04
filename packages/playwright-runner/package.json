@@ -1,0 +1,19 @@
+{
+  "name": "@capitao-diff/playwright-runner",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'No lint configured for @capitao-diff/playwright-runner'",
+    "test": "echo 'No tests for @capitao-diff/playwright-runner'",
+    "format": "echo 'Use your formatter of choice'"
+  },
+  "dependencies": {
+    "@capitao-diff/shared": "workspace:*",
+    "playwright": "^1.53.2"
+  }
+}

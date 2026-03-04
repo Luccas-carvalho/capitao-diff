@@ -1,0 +1,12 @@
+{
+  "brand.name": "Capitão Diff",
+  "brand.tagline": "Ship frontend code without fear.",
+  "lang.en": "English",
+  "lang.pt": "Portuguese",
+  "switcher.label": "Language",
+  "result.label": "RESULT",
+  "result.approved": "Approved",
+  "result.rejected": "Not approved",
+  "tone.approved": "Capitão Diff authorized the deploy. Mission accomplished, soldier.",
+  "tone.rejected": "Code out of troop standards. Hold position and fix before deploy."
+}

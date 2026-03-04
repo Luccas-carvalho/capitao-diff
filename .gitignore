@@ -1,0 +1,14 @@
+node_modules
+.pnpm-store
+.env
+.env.*
+*.log
+dist
+coverage
+.DS_Store
+playwright-report
+playwright/.cache
+test-results
+apps/api/prisma/dev.db
+apps/api/prisma/dev.db-journal
+.capitao-diff/config.yml

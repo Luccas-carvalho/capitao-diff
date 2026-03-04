@@ -1,0 +1,23 @@
+{
+  "name": "capitao-diff",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.4.1",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @capitao-diff/api --filter @capitao-diff/dashboard --filter @capitao-diff/landing dev",
+    "dev:platform": "pnpm --parallel --filter @capitao-diff/api --filter @capitao-diff/dashboard --filter @capitao-diff/landing dev",
+    "mcp:install": "node ./scripts/install-mcp-clients.mjs",
+    "mcp:install:all": "node ./scripts/install-mcp-clients.mjs --targets cursor,codex,claude",
+    "mcp:install:cursor": "node ./scripts/install-mcp-cursor.mjs",
+    "mcp:bootstrap": "bash ./scripts/install-mcp.sh",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "format": "pnpm -r format"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  }
+}
