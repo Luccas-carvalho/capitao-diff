@@ -89,7 +89,7 @@ echo "Installing dependencies"
 pnpm --dir "$INSTALL_DIR" install
 
 echo "Building MCP server"
-pnpm --dir "$INSTALL_DIR" --filter @capitao-diff/mcp-server build
+pnpm --dir "$INSTALL_DIR" -r --filter @capitao-diff/mcp-server... build
 
 if [[ "$SKIP_PLAYWRIGHT" != "true" ]]; then
   echo "Installing Playwright Chromium"

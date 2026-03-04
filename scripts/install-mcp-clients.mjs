@@ -116,9 +116,9 @@ const ensureServerBuild = async (serverPath, shouldBuild) => {
     throw new Error(`MCP server file not found: ${serverPath}`);
   }
 
-  console.log("MCP dist file not found. Building @capitao-diff/mcp-server...");
+  console.log("MCP dist file not found. Building @capitao-diff/mcp-server with workspace dependencies...");
 
-  const build = spawnSync("pnpm", ["--filter", "@capitao-diff/mcp-server", "build"], {
+  const build = spawnSync("pnpm", ["-r", "--filter", "@capitao-diff/mcp-server...", "build"], {
     cwd: repoRoot,
     stdio: "inherit"
   });
